@@ -15,6 +15,7 @@
     "react-scripts": "3.3.0",
     "redux": "^4.0.5",
     "shortid": "^2.2.15",
+    "styled-components": "^5.0.0",
     "txtgen": "^2.2.4"
   },
   "scripts": {

@@ -1,8 +1,14 @@
 import React from 'react';
-import './Main.css';
+import styled from 'styled-components';
 
 import Empty from './Empty';
 import ChatWindow from '../containers/ChatWindow';
+
+const StyledMain = styled.main`
+  flex: 1 1 0;
+  background-color: rgba(25, 25, 27, 1);
+  height: 100%;
+`;
 
 const Main = ({ user, activeUserId }) => {
   const renderMainContent = () => {
@@ -12,7 +18,7 @@ const Main = ({ user, activeUserId }) => {
       return <ChatWindow activeUserId={activeUserId} />
     }
   }
-  return <main className="Main">{renderMainContent()}</main>;
+  return <StyledMain>{renderMainContent()}</StyledMain>;
 };
 
 export default Main;

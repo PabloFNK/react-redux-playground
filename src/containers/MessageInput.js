@@ -1,8 +1,24 @@
 import React from "react";
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import { setTypingValue, sendMessage } from "../actions";
-import "./MessageInput.css";
+
+const StyledMessageForm = styled.form`
+  width: 80%;
+  margin: 1rem auto;
+`;
+
+const StyledMessageInput = styled.input`
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: 0;
+`
 
 const MessageInput = ({ typing, activeUserId, value, setTypingValue, sendMessage }) => {
   const handleChange = e => {
@@ -15,14 +31,14 @@ const MessageInput = ({ typing, activeUserId, value, setTypingValue, sendMessage
   }
 
   return (
-    <form className="Message" onSubmit={handleSubmit}>
-      <input
+    <StyledMessageForm onSubmit={handleSubmit}>
+      <StyledMessageInput
         className="Message__input"
         onChange={handleChange}
         value={value}
         placeholder="write a message"
       />
-    </form>
+    </StyledMessageForm>
   );
 };
 

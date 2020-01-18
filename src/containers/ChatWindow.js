@@ -1,24 +1,29 @@
 import React from "react";
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+
 import Header from "../components/Header";
 import Chats from '../components/Chats';
 import MessageInput from '../containers/MessageInput';
 
-import { connect } from 'react-redux';
-
-import './ChatWindow.css';
-
 import { values } from 'lodash-es';
+
+const StyledChatWindow = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`
 
 const ChatWindow = ({ activeUserId, contacts, messages, typing }) => {
   const activeUser = contacts[activeUserId];
   const activeMsgs = messages[activeUserId];
 
   return (
-    <div className="ChatWindow">
+    <StyledChatWindow>
       <Header user={activeUser} />
       <Chats messages={values(activeMsgs)} />
       <MessageInput value={typing} />
-    </div>
+    </StyledChatWindow>
   );
 };
 
