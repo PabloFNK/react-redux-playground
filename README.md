@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Experimenting with React and Redux stack
+
+- [x] Make plain React and Redux course
+- [x] Migrate to react-redux
+- [x] Migrate to style-components
+- [ ] Add Typescript
+- [ ] Add Enzyme testing
+- [ ] Reorganize structure to use redux duck pattern
+
 ## Available Scripts
 
 In the project directory, you can run:
