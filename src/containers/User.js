@@ -1,13 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './User.css';
-import store from '../store';
 import { setActiveUserId } from '../actions';
 
-const User = ({ user }) => {
+const User = ({ user, setActiveUserId }) => {
   const { name, profile_pic, status } = user;
 
   const handleUserClick = () => {
-    store.dispatch(setActiveUserId(user.user_id));
+    setActiveUserId(user.user_id);
   }
 
   return (
@@ -21,4 +21,12 @@ const User = ({ user }) => {
   )
 };
 
-export default User;
+const mapStateToProps = (state, ownProps) => ({
+  ...ownProps
+});
+
+const mapDispatchToProps = {
+  setActiveUserId
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
